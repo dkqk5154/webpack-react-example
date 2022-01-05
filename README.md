@@ -3,7 +3,7 @@
 ## Getting started
 
 ```
-    yarn install 💅🏾
+    yarn install
     yarn start
 ```
 
