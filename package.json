@@ -8,7 +8,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
-    "@babel/plugin-transform-react-jsx-compat": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
     "@babel/preset-react": "^7.16.7",
     "babel-loader": "^8.2.3",
