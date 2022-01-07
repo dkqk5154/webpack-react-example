@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "es6",
+        "baseUrl": "./src",
+        "outDir": "./build/",
+        "sourceMap": true,
+        "noImplicitAny": true,
+        "jsx": "react",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "typeRoots": [
+        "node_modules/@types",
+        "src/@type"
+    ],
+    "exclude": [
+        "node_modules",
+        "build",
+        "scripts",
+        "acceptance-tests",
+        "webpack",
+        "jest",
+        "src/setupTests.ts",
+        "./node_modules/**/*"
+    ],
+    "include": [
+        "./src/**/*",
+        "@type"
+    ]
+}
