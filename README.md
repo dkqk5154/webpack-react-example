@@ -11,4 +11,8 @@
 
 ### 2. production 환경을 구성 ✅
 
-### 3. typescript를 적용 ❌
+### 3. typescript를 적용 ✅
+
+### F. css, image.* loader 적용 ✅
+
+### 5. Eslint, Prettier 적용 ❌
