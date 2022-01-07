@@ -15,7 +15,12 @@ const Styled = {
   `,
 };
 
-const Button = ({ children, onClick }) => {
+export type ButtonProps = {
+  children: any;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+};
+
+const Button = ({ children, onClick }: ButtonProps) => {
   return <Styled.Button onClick={onClick}>{children}</Styled.Button>;
 };
 
