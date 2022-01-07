@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import Button from "components/common/Button";
 import { testFunction } from "test";
-// import { ReactComponent as Logo } from "images/logo.svg";
+import Logo from "images/logo.svg";
 
 const Styled = {
     Wrapper: styled.div`
@@ -14,10 +14,10 @@ const Styled = {
         justify-content: center;
         font-size : 22px;
     `,
-    Logo: styled.img`
+    Logo: styled(Logo)`
         width: 180px;
         height : 120px;
-        animation : ${() => keyframes`
+        animation : ${keyframes`
             from {transform : rotate(0deg)}
             to { transform : rotate(360deg)}
         `}  infinite 3s linear ;
@@ -32,9 +32,10 @@ const App = () => {
         setCount((prevState) => prevState + 1);
     };
 
+
     return (
         <Styled.Wrapper>
-            <Styled.Logo src={require("images/logo2.png").default} />
+            <Styled.Logo />
             <div>Hello, webpack! {testFunction(3, 2)} </div>
             <Button onClick={handleClickButton}>클릭 버튼 카운터 {count}</Button>
         </Styled.Wrapper>
