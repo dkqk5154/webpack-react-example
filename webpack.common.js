@@ -11,7 +11,7 @@ module.exports = {
         // publicPath: './src'
     },
     resolve: {
-        extensions: ['', '.ts', '.tsx', '.js', '.jsx'],
+        extensions: ['', '.ts', '.tsx', '.js', '.jsx', '.svg', '.png'],
         modules: [
             path.resolve(__dirname, 'node_modules'),
             path.resolve(__dirname, './src'),
@@ -43,8 +43,19 @@ module.exports = {
                 use: ['style-loader', 'css-loader']
             },
             {
-                test: /\.(png|jpg|jpeg|gif|svg)$/,
-                use: ['file-loader'],
+                test: /\.(png|jp(e*)g|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'images/[hash]-[name].[ext]',
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.svg$/,
+                use: ['@svgr/webpack'],
             },
 
             {
