@@ -4,6 +4,11 @@ import Button from "components/common/Button";
 import { testFunction } from "test";
 import Logo from "images/logo.svg";
 
+const rotateAnimation = keyframes`
+    from {transform : rotate(0deg)}
+    to { transform : rotate(360deg)}
+`;
+
 const Styled = {
     Wrapper: styled.div`
         display: flex;
@@ -14,13 +19,18 @@ const Styled = {
         justify-content: center;
         font-size : 22px;
     `,
+    LogoWrapper: styled.div`
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    `,
     Logo: styled(Logo)`
-        width: 180px;
-        height : 120px;
-        animation : ${keyframes`
-            from {transform : rotate(0deg)}
-            to { transform : rotate(360deg)}
-        `}  infinite 3s linear ;
+        width: 100px;
+        animation : ${rotateAnimation}  infinite 3s linear ;
+    `,
+    PngLogo: styled.img`
+        width: 160px;
+        animation : ${rotateAnimation}  infinite 2s linear ;
     `
 };
 
@@ -35,7 +45,11 @@ const App = () => {
 
     return (
         <Styled.Wrapper>
-            <Styled.Logo />
+            <Styled.LogoWrapper>
+                {/* <Styled.PngLogo src={require('images/logo2.png').default} /> */}
+                <Styled.Logo />
+            </Styled.LogoWrapper>
+
             <div>Hello, webpack! {testFunction(3, 2)} </div>
             <Button onClick={handleClickButton}>클릭 버튼 카운터 {count}</Button>
         </Styled.Wrapper>
