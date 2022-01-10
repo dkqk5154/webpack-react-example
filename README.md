@@ -13,6 +13,6 @@
 
 ### 3. typescript를 적용 ✅
 
-### F. css, image.* loader 적용 ✅
+### F. css, image.\* loader 적용 ✅
 
-### 5. Eslint, Prettier 적용 ❌
+### 5. Eslint, Prettier 적용 ✅
