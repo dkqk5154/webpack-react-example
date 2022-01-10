@@ -1,20 +1,20 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const path = require('path')
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+const path = require("path");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 module.exports = {
     entry: "./src/index.js",
-    devtool: 'inline-source-map',
+    devtool: "inline-source-map",
     output: {
         filename: "bundle.[hash].js",
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, "build"),
         // publicPath: './src'
     },
     resolve: {
-        extensions: ['', '.ts', '.tsx', '.js', '.jsx', '.svg', '.png'],
+        extensions: ["", ".ts", ".tsx", ".js", ".jsx"],
         modules: [
-            path.resolve(__dirname, 'node_modules'),
-            path.resolve(__dirname, './src'),
+            path.resolve(__dirname, "node_modules"),
+            path.resolve(__dirname, "./src"),
         ]
     },
     module: {
@@ -34,28 +34,28 @@ module.exports = {
             },
             {
                 test: /\.(ts|tsx)?$/,
-                use: 'ts-loader',
+                use: "ts-loader",
                 exclude: /node_modules/,
 
             },
             {
                 test: /\.css$/i,
-                use: ['style-loader', 'css-loader']
+                use: ["style-loader", "css-loader"]
             },
             {
                 test: /\.(png|jp(e*)g|gif)$/,
                 use: [
                     {
-                        loader: 'file-loader',
+                        loader: "file-loader",
                         options: {
-                            name: 'images/[hash]-[name].[ext]',
+                            name: "images/[hash]-[name].[ext]",
                         },
                     },
                 ],
             },
             {
                 test: /\.svg$/,
-                use: ['@svgr/webpack'],
+                use: ["@svgr/webpack"],
             },
 
             {
@@ -71,7 +71,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'public/index.html',
+            template: "public/index.html",
         }),
         new ForkTsCheckerWebpackPlugin(),
     ],
